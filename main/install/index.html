@@ -3260,12 +3260,19 @@ system-wide version of Au, then you can install it to the system, and simply use
 <td>Core library functionality.  See <a href="https://github.com/aurora-opensource/au/tree/main/au/units">all available units</a> and <a href="../reference/constant/#unit-literals">unit literals</a></td>
 </tr>
 <tr>
+<td><code>Au::au_module</code></td>
+<td>(none &mdash; use <code>import au;</code>)</td>
+<td>C++20 module interface.  Opt in with <code>-DAU_BUILD_MODULE=ON</code>; requires CMake 3.28+, C++20, and a generator and compiler with C++ modules support</td>
+</tr>
+<tr>
 <td><code>Au::testing</code></td>
 <td><code>"au/testing.hh"</code></td>
 <td>Utilities for writing googletest tests</td>
 </tr>
 </tbody>
 </table>
+<p>The <code>au</code> module exports every public-facing name in the library, except for macros (which modules
+cannot export).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These instructions are for adding Au to a <em>project</em> that uses CMake, not building Au itself
